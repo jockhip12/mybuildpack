@@ -10,7 +10,7 @@ describe 'deploy a staticfile app' do
   end
 
   context 'ssi is toggled on' do
-    let(:app) { Machete.deploy_app('ssi_enabled') }
+    let(:app) { Machete.deploy_app('ssi_enabled_app') }
 
     specify do
       expect(app).to be_running
@@ -22,7 +22,7 @@ describe 'deploy a staticfile app' do
   end
 
   context 'ssi is toggled off' do
-    let(:app) { Machete.deploy_app('ssi_disabled') }
+    let(:app) { Machete.deploy_app('ssi_disabled_app') }
 
     specify do
       expect(app).to be_running

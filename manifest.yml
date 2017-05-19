@@ -1,29 +1,26 @@
 ---
 language: staticfile
-default_versions:
-- name: nginx
-  version: 1.11.13
+
 exclude_files:
-- ".git/"
-- ".gitignore"
-- ".gitmodules"
-- ".rspec"
-- cf_spec/
-- log/
-- test/
-- buildpack-packager/
-- staticfile_buildpack-*v*.zip
-- pkg/
-- ".envrc"
-- cf.Gemfile
-- cf.Gemfile.lock
-- scripts/
-- src/
+  - .git/
+  - .gitignore
+  - .gitmodules
+  - .rspec
+  - cf_spec/
+  - log/
+  - test/
+  - buildpack-packager/
+  - staticfile_buildpack-*v*.zip
+
+url_to_dependency_map:
+  - match: nginx.tgz
+    name: nginx
+    version: 1.11.1
+
 dependencies:
-- name: nginx
-  version: 1.11.13
-  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx/nginx-1.11.13-linux-x64-0ae5f6fb.tgz
-  md5: 0ae5f6fbae17cffb087fea4b9518b4f7
-  cf_stacks:
-  - cflinuxfs2
-pre_package: scripts/build.sh
+  - name: nginx
+    version: 1.11.1
+    uri: https://pivotal-buildpacks.s3.amazonaws.com/concourse-binaries/nginx/nginx-1.11.1-linux-x64.tgz
+    cf_stacks:
+      - cflinuxfs2
+    md5: 7d28497395b62221f3380e82f89cd197
