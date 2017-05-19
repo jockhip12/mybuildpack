@@ -24,7 +24,8 @@ compile_nginx_tgz="/tmp/nginx.tgz"
 cd $build_dir
 
 
-cp pandoc build_dir/pandoc
+cp $compile_buildpack_dir/pandoc $build_dir/pandoc
+
 
 
 
