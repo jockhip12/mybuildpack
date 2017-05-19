@@ -24,7 +24,9 @@ compile_nginx_tgz="/tmp/nginx.tgz"
 cd $build_dir
 
 
-find / -name "Question.md" -type f -exec sh -c 'markdown "$0" > "$0.html"' {} \;
+cp pandoc build_dir/pandoc
+
+
 
 # Alternate root location (default is root of project) for html/js/css
 # root: dist/

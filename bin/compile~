@@ -23,6 +23,11 @@ echo "Downloaded [$translated_url]"
 compile_nginx_tgz="/tmp/nginx.tgz"
 cd $build_dir
 
+
+cp pandoc build_dir/pandoc
+
+
+
 # Alternate root location (default is root of project) for html/js/css
 # root: dist/
 if [[ -e "Staticfile" && "$(grep 'root:' Staticfile)X" != "X" ]]; then
